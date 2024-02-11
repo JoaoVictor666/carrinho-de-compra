@@ -5,7 +5,8 @@ import AppContext from './AppContext'
 function Provider({children}){
   const [ cartItems,setCartItems] = useState([])
   const [ products,setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [ loading, setLoading] = useState(true)
+  const [ isCartVisible, setCartVisible] = useState(false)
 
   const value = {
     products,
@@ -14,6 +15,8 @@ function Provider({children}){
     setLoading,
     cartItems,
     setCartItems,
+    isCartVisible, 
+    setCartVisible,
   }
   return (
     <AppContext.Provider value={ value }>

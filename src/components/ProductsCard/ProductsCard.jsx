@@ -7,19 +7,16 @@ import { FaCartPlus } from 'react-icons/fa'
 import formatCurrency from '../../utils/formatCurrency'
 
 
+// eslint-disable-next-line react/prop-types
 function ProductCard({ data }) {
+  // eslint-disable-next-line react/prop-types
   const {title, thumbnail, price} = data
 
   const {cartItems, setCartItems} = useContext(AppContext)
   
 
-  const handleAddCart = () => {
-    const updateCartItems = cartItems
-    
-    updateCartItems(data)
-    
-    setCartItems(updateCartItems)
-  }
+  const handleAddCart = () => setCartItems([...cartItems, data])
+  
     
 
   return (
